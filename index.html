@@ -11,15 +11,19 @@
     <!-- <div style="width: 500px; margin: 0 auto;">
         <img style="width: 100%; max-height: 500px;" src="./assests/qrcode-wx.png" alt="">
     </div> -->
-    <div id="width"></div>
-    <div id="height"></div>
+    <div id="availWidth"></div>
+    <div id="availHeight"></div>
+    <div id="innerWidth"></div>
+    <div id="innerHeight"></div>
 </body>
 
 <script>
-    var width = 'window.screen.availWidth  ' + window.screen.availWidth;
-    var height = 'window.screen.availHeight  ' + window.screen.availHeight;
-    document.getElementById('width').innerHTML = width;
-    document.getElementById('height').innerHTML = height;
+    var availWidth = 'window.screen.availWidth  ' + window.screen.availWidth;
+    var availHeight = 'window.screen.availHeight  ' + window.screen.availHeight;
+    document.getElementById('availWidth').innerHTML = availWidth;
+    document.getElementById('availHeight').innerHTML = availHeight;
+    document.getElementById('innerWidth').innerHTML = 'window.screen.innerWidth  ' + window.screen.availWidth;;
+    document.getElementById('innerHeight').innerHTML = 'window.screen.innerHeight  ' + window.screen.availWidth;;
 </script>
 
 </html>
