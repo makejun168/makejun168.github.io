@@ -1,29 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>测试</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>折叠屏适配示例</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    /* 普通屏幕尺寸 */
+    @media (min-width: 320px) and (max-width: 767px) {
+     .container {
+        background-color: lightblue;
+      }
+    }
+
+    /* 折叠屏展开状态或较大平板尺寸 */
+    @media (min-width: 768px) and (max-width: 1023px) {
+     .container {
+        background-color: lightgreen;
+      }
+    }
+
+    /* 更大尺寸的桌面显示器等 */
+    @media (min-width: 1024px) {
+     .container {
+        background-color: lightcoral;
+      }
+    }
+  </style>
 </head>
 
-<body style="position: relative;">
-    <!-- <div>点击测试一下</div> -->
-    <!-- <a href="mqq://im/chat?chat_type=wpa&uin=542212932&version=1&src_type=web">点击测试跳转QQ</a> -->
-    <!-- <div style="width: 500px; margin: 0 auto;">
-        <img style="width: 100%; max-height: 500px;" src="./assests/qrcode-wx.png" alt="">
-    </div> -->
-    <div id="availWidth"></div>
-    <div id="availHeight"></div>
-    <div id="innerWidth"></div>
-    <div id="innerHeight"></div>
+<body>
+  <div class="container">
+    <h1>欢迎来到我的网页</h1>
+    <p>这个网页可以自适应不同设备尺寸，包括折叠屏。</p>
+  </div>
 </body>
-
-<script>
-    var availWidth = 'window.screen.availWidth  ' + window.screen.availWidth;
-    var availHeight = 'window.screen.availHeight  ' + window.screen.availHeight;
-    document.getElementById('availWidth').innerHTML = availWidth;
-    document.getElementById('availHeight').innerHTML = availHeight;
-    document.getElementById('innerWidth').innerHTML = 'window.screen.innerWidth  ' + window.screen.availWidth;;
-    document.getElementById('innerHeight').innerHTML = 'window.screen.innerHeight  ' + window.screen.availWidth;;
-</script>
 
 </html>
